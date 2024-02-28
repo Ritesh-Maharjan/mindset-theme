@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages
+ * Template Name: Sidebar on left
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -13,6 +13,7 @@
  */
 
 get_header();
+get_sidebar();
 ?>
 
 	<main id="primary" class="site-main">
@@ -28,24 +29,10 @@ get_header();
 				comments_template();
 			endif;
 
-			if (function_exists('get_field')) {
-
-				if (get_field('physical_address')) {
-					echo '<p>' . esc_html( get_field( 'physical_address' ) ) . '</p>';
-
-				}
-
-				if (get_field('email')) {
-					echo '<p>' . esc_html( get_field( 'email' ) ) . '</p>';
-				}
-
-			}
-
 		endwhile; // End of the loop.
 		?>
 
 	</main><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
